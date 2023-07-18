@@ -20,7 +20,7 @@
 
     <div id="header" class="container-fluid">
         <div class="row">
-            <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions for Continuous Space-Time Video Super-Resolution</h1>
+            <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions <br> for Continuous Space-Time Video Super-Resolution</h1>
             <div class="authors">
                 <a href="https://www.linkedin.com/in/hyancheng96" target="_blank">Yan-Cheng Huang</a>, 
                 <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen</a>, 
@@ -37,28 +37,28 @@
     <div class="container" id="abstractdiv">
         <h2>Abstract</h2>
             <p>This work addresses continuous space-time video super-resolution (C-STVSR) that aims to up-scale an input video both spatially and temporally by any scaling factors. One key challenge of C-STVSR is to propagate information temporally among the input video frames. To this end, we introduce a space-time local implicit neural function. It has the striking feature of learning forward motion for a continuum of pixels. We motivate the use of forward motion from the perspective of learning individual motion trajectories, as opposed to learning a mixture of motion trajectories with backward motion. To ease motion interpolation, we encode sparsely sampled forward motion extracted from the input video as the contextual input. Alongwith a reliability-aware splatting and decoding scheme, our framework, termed MoTIF, achieves the state-of-the-art performance on C-STVSR.  </p>
-    </div>
+    <!--</div>
     <div class="container" id="intro_video">
         <h2>Introduction Video</h2>
             <p style="text-align:center;">
                 <iframe width="1024" height="576" src="https://www.youtube.com/embed/B3KRQmJaLQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
-    </div>
+    </div>-->
     
 
     <div class="container" id="paperdiv">
-        <h2>CVPR 2021 Paper</h2>
+        <h2>CICCV 2023 Paper</h2>
         <div class="row">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-3">
-                <a href="https://github.com/ding3820/MIMO-VRN" target="_blank"><p style="text-align: center;">
+                <a href="https://github.com/sichun233746/MoTIF" target="_blank"><p style="text-align: center;">
                 <img src="web/icon/github_icon.png">
                 <br/>
                 Code (Github)
             </p></a></div>
             <div class="col-sm-3">
-                <a href="https://arxiv.org/abs/2103.14858" target="_blank"><p style="text-align: center;">
+                <a href="https://arxiv.org/abs/2307.07988" target="_blank"><p style="text-align: center;">
                 <img src="web/icon/pdf_icon.png" height="120">
                 <br/>
                 Paper (arXiv)
@@ -70,9 +70,9 @@
             <div class="thumbs">
             </div>
         </a>
-        <div>
+        <!--<div>
             <pre class="citation">
-            @InProceedings{Huang_2021_CVPR,
+            @InProceedings{Chen_2021_CVPR,
                 author    = {Huang, Yan-Cheng and Chen, Yi-Hsin and Lu, Cheng-You and Wang, Hui-Po and Peng, Wen-Hsiao and Huang, Ching-Chun},
                 title     = {Video Rescaling Networks With Joint Optimization Strategies for Downscaling and Upscaling},
                 booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -82,16 +82,16 @@
             }
             </pre>
         </div>
-    </div>
+    </div>-->
 
     <div class="container" id="method">
         <h2>Method</h2>
         <p style="text-align:center;">
-            <img src="web/arch.png" height="480">
+            <img src="web/arch.png" height="640">
         </p>
         <br>
-        <p>
-            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>
+        <!--<p>
+            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>-->
     </div>
 
     <div class="container" id="exp_results">
@@ -103,6 +103,7 @@
                 Video Results
             </p>
         </a>
+        <a href="./web/vid/Input_x4_Ours.html" target="_blank">About Us</a>
     <hr>
     <h3>HR Reconstruction on Vid4</h3>
     <hr>
