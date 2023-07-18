@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Rescaling Networks with Joint Optimization Strategies for Downscaling and Upscaling (CVPR 2021)</title>
+    <script type="text/javascript" src="web/latexit.js"></script>
+    <script type="text/javascript">
+    LatexIT.add('p',true);
+    </script>
+
+    <!-- CSS includes -->
+    <link href="web/bootstrap.css" rel="stylesheet">
+    <link href="web/css.css" rel="stylesheet" type="text/css">
+    <link href="web/mystyle.css" rel="stylesheet">
+
+    </head>
+<body>
+
+    <div id="header" class="container-fluid">
+        <div class="row">
+            <h1>Video Rescaling Networks<br>with Joint Optimization Strategies for Downscaling and Upscaling</h1>
+            <div class="authors">
+                <a href="https://www.linkedin.com/in/hyancheng96" target="_blank">Yan-Cheng Huang</a>, 
+                <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen</a>, 
+                <a href="https://johnnylu305.github.io", target="_blank">Cheng-You Lu</a>, 
+                <a href="https://a514514772.github.io", target="_blank">Hui-Po Wang</a>, 
+                <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng/cv", target="_blank">Wen-Hsiao Peng</a>, 
+                <a href="http://acm.cs.nctu.edu.tw/Home.aspx", target="_blank">Ching-Chun Huang</a>
+            </div>
+        </div>
+    
+        <p style="text-align:center;">
+            <a href="https://www.nycu.edu.tw/en/" target="_blank"><img src="web/NCTU_logo.png" height="100"></a>   
+            <a href="https://cispa.de/en" target="_blank"><img src="web/cispa.png" height="90"></a>  
+            <a href="http://mapl.nctu.edu.tw/" target="_blank"><img src="web/mapl_logo.png"  height="110"></a>
+        </p>
+    </div>
+    <div class="container" id="abstractdiv">
+        <h2>Abstract</h2>
+            <p>This paper addresses the video rescaling task, which arises from the needs of adapting the video spatial resolution to suit individual viewing devices. We aim to jointly optimize video downscaling and upscaling as a combined task. Most recent studies focus on image-based solutions, which do not consider temporal information. We present two joint optimization approaches based on invertible neural networks with coupling layers. Our Long Short-Term Memory Video Rescaling Network (LSTM-VRN) leverages temporal information in the low-resolution video to form an explicit prediction of the missing high-frequency information for upscaling. Our Multi-input Multi-output Video Rescaling Network (MIMO-VRN) proposes a new strategy for downscaling and upscaling a group of video frames simultaneously. Not only do they outperform the image-based invertible model in terms of quantitative and qualitative results, but also show much improved upscaling quality than the video rescaling methods without joint optimization. To our best knowledge, this work is the first attempt at the joint optimization of video downscaling and upscaling.  </p>
+    </div>
+    <div class="container" id="intro_video">
+        <h2>Introduction Video</h2>
+            <p style="text-align:center;">
+                <iframe width="1024" height="576" src="https://www.youtube.com/embed/B3KRQmJaLQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </p>
+    </div>
+    
+
+    <div class="container" id="paperdiv">
+        <h2>CVPR 2021 Paper</h2>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+                <a href="https://github.com/ding3820/MIMO-VRN" target="_blank"><p style="text-align: center;">
+                <img src="web/icon/github_icon.png">
+                <br/>
+                Code (Github)
+            </p></a></div>
+            <div class="col-sm-3">
+                <a href="https://arxiv.org/abs/2103.14858" target="_blank"><p style="text-align: center;">
+                <img src="web/icon/pdf_icon.png" height="120">
+                <br/>
+                Paper (arXiv)
+            </p></a></div>
+            <div class="col-sm-3">
+            </div>
+        </div>
+        <a href="" target="_blank">
+            <div class="thumbs">
+            </div>
+        </a>
+        <div>
+            <pre class="citation">
+            @InProceedings{Huang_2021_CVPR,
+                author    = {Huang, Yan-Cheng and Chen, Yi-Hsin and Lu, Cheng-You and Wang, Hui-Po and Peng, Wen-Hsiao and Huang, Ching-Chun},
+                title     = {Video Rescaling Networks With Joint Optimization Strategies for Downscaling and Upscaling},
+                booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+                month     = {June},
+                year      = {2021},
+                pages     = {3527-3536}
+            }
+            </pre>
+        </div>
+    </div>
+
+    <div class="container" id="method">
+        <h2>Method</h2>
+        <p style="text-align:center;">
+            <img src="web/arch.png" height="480">
+        </p>
+        <br>
+        <p>
+            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>
+    </div>
+
+    <div class="container" id="exp_results">
+        <h2>Experimental Results (Vid4)</h2>
+        <a href="http://mapl.nctu.edu.tw/MIMO_VRN" target="_blank">
+            <p style="text-align: center;">
+                <img src="web/icon/demo.png" style="width: 15%">
+                </br>
+                Video Results
+            </p>
+        </a>
+    <hr>
+    <h3>HR Reconstruction on Vid4</h3>
+    <hr>
+    <div id="comparison_source">
+        <div class="row" style="text-align: center;">
+            <img src="web/table1.png" width="900">
+        </div>
+        <div class="row" style="text-align: center;">
+            <h3><u>Calendar </u></h3>
+            <img src="web/pic/vid4_calendar.png" width="900">
+        </div>
+        <div class="row" style="text-align: center;">
+            <h3><u>City </u></h3>
+            <img src="web/pic/vid4_city.png" width="900">
+        </div>
+        <div class="row" style="text-align: center;">
+            <h3><u>Walk</u> </h3>
+            <img src="web/pic/vid4_walk.png" width="900">
+        </div>
+        <div class="row" style="text-align: center;">
+            <h3><u>Foliage</u> </h3>
+            <img src="web/pic/vid4_foliage.png" width="900">
+        </div>
+    </div>
+
+    <hr>
+    <h3>HR Reconstruction on Vimeo-90K-T</h3>
+    <hr>
+    <div id="comparison_source">
+        <div class="row" style="text-align: center;">
+            <img src="web/table2.png" width="500">
+        </div>
+        <div class="row" style="text-align: center;">
+            <img src="web/pic/vimeo.png" width="900">
+        </div>
+    </div>
+
+    <hr>
+    <h3>LR Reconstruction on Vid4</h3>
+    <hr>
+    <div id="comparison_source">
+        <div class="row" style="text-align: center;">
+            <img src="web/pic/lr.png" width="900">
+        </div>
+        </br>
+        <div class="row">
+            <p>We still can see the unpleasing artifacts in some of the downscaled LR results especially those produced by SISO downscaling method such as IRN and LSTM-VRN. However, MIMO-VRN can reduce much such artifacts since it utilizes temporal information while downscaling. The other way of reducing such artifacts is to increase the lambda factor in loss function which makes LR video much close to bicubic-downscaled one with a slight decrease in HR reconstrution quality. If the LR quality really bothers you, we suggest training the model with higher lambda factor.</p>
+        </div>
+        <div class="row" style="text-align: center;">    
+            <img src="web/pic/lambda.png" width="400">
+        </div>
+    </div>
+
+    </div>
+
+
+    <div id=footer><br></div>
+    <!-- Javascript includes -->
+    <script src="web/jquery-1.js"></script>
+    <script src="web/bootstrap.js"></script>
+  
+
+</body></html>
