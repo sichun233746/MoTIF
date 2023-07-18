@@ -20,7 +20,7 @@
 
     <div id="header" class="container-fluid">
         <div class="row">
-            <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions <br> for Continuous Space-Time Video Super-Resolution</h1>
+            <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural <br> Functions for Continuous Space-Time Video Super-Resolution</h1>
             <div class="authors">
                 <a href="https://www.linkedin.com/in/hyancheng96" target="_blank">Yan-Cheng Huang</a>, 
                 <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen</a>, 
@@ -36,7 +36,7 @@
     </div>
     <div class="container" id="abstractdiv">
         <h2>Abstract</h2>
-            <p>This work addresses continuous space-time video super-resolution (C-STVSR) that aims to up-scale an input video both spatially and temporally by any scaling factors. One key challenge of C-STVSR is to propagate information temporally among the input video frames. To this end, we introduce a space-time local implicit neural function. It has the striking feature of learning forward motion for a continuum of pixels. We motivate the use of forward motion from the perspective of learning individual motion trajectories, as opposed to learning a mixture of motion trajectories with backward motion. To ease motion interpolation, we encode sparsely sampled forward motion extracted from the input video as the contextual input. Alongwith a reliability-aware splatting and decoding scheme, our framework, termed MoTIF, achieves the state-of-the-art performance on C-STVSR.  </p>
+            <p>This work addresses continuous space-time video super-resolution (C-STVSR) that aims to up-scale an input video both spatially and temporally by any scaling factors. One key challenge of C-STVSR is to propagate information temporally among the input video frames. To this end, we introduce a space-time local implicit neural function. It has the striking feature of learning forward motion for a continuum of pixels. We motivate the use of forward motion from the perspective of learning individual motion trajectories, as opposed to learning a mixture of motion trajectories with backward motion. To ease motion interpolation, we encode sparsely sampled forward motion extracted from the input video as the contextual input. Along with a reliability-aware splatting and decoding scheme, our framework, termed MoTIF, achieves the state-of-the-art performance on C-STVSR.  </p>
     <!--</div>
     <div class="container" id="intro_video">
         <h2>Introduction Video</h2>
@@ -47,7 +47,7 @@
     
 
     <div class="container" id="paperdiv">
-        <h2>CICCV 2023 Paper</h2>
+        <h2>ICCV 2023 Paper</h2>
         <div class="row">
             <div class="col-sm-3">
             </div>
@@ -95,70 +95,79 @@
     </div>
 
     <div class="container" id="exp_results">
-        <h2>Experimental Results (Vid4)</h2>
-        <a href="http://mapl.nctu.edu.tw/MIMO_VRN" target="_blank">
+        <h2>Experimental Results</h2>
+        <!--<a href="http://mapl.nctu.edu.tw/MIMO_VRN" target="_blank">
             <p style="text-align: center;">
                 <img src="web/icon/demo.png" style="width: 15%">
                 </br>
                 Video Results
             </p>
         </a>
+        <video width="40%" autoplay="autoplay">
+          <source src="./web/vid/Input_X4.webm" type="video/webm">
+        </video>
+        <video width="40%"  autoplay="autoplay">
+          <source src="./web/vid/Ours.webm" type="video/webm">
+        </video>-->
+    <hr>
+    <h3>Video Comparison</h3>
+    <hr>
+        <img src="web/vid/Input.gif" width="40%">
+        <img src="web/vid/Ours.gif" width="40%">
+        <br>
         <a href="./web/vid/Input_x4_Ours.html" target="_blank">Input_x4_Ours</a>
+        <br>
         <a href="./web/vid/Ours_VideoINR.html" target="_blank">Ours_VideoINR</a>
+        <br>
         <a href="./web/vid/GroundTruth_Ours.html" target="_blank">GroundTruth_Ours</a>
+        <br>
         <a href="./web/vid/GroundTruth_VideoINR.html" target="_blank">GroundTruth_VideoINR</a>
     <hr>
-    <h3>HR Reconstruction on Vid4</h3>
+    <h3>Quantitative Results - C-STVSR</h3>
     <hr>
     <div id="comparison_source">
         <div class="row" style="text-align: center;">
-            <img src="web/table1.png" width="900">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3><u>Calendar </u></h3>
-            <img src="web/pic/vid4_calendar.png" width="900">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3><u>City </u></h3>
-            <img src="web/pic/vid4_city.png" width="900">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3><u>Walk</u> </h3>
-            <img src="web/pic/vid4_walk.png" width="900">
-        </div>
-        <div class="row" style="text-align: center;">
-            <h3><u>Foliage</u> </h3>
-            <img src="web/pic/vid4_foliage.png" width="900">
+            <img src="web/table1.png" width="1200">
         </div>
     </div>
 
     <hr>
-    <h3>HR Reconstruction on Vimeo-90K-T</h3>
+    <h3>Quantitative Results - F-STVSR</h3>
     <hr>
     <div id="comparison_source">
         <div class="row" style="text-align: center;">
-            <img src="web/table2.png" width="500">
-        </div>
-        <div class="row" style="text-align: center;">
-            <img src="web/pic/vimeo.png" width="900">
+            <img src="web/table2.png" width="1200">
         </div>
     </div>
 
     <hr>
-    <h3>LR Reconstruction on Vid4</h3>
+    <h3>Qualitative  Results</h3>
     <hr>
     <div id="comparison_source">
         <div class="row" style="text-align: center;">
-            <img src="web/pic/lr.png" width="900">
-        </div>
-        </br>
-        <div class="row">
-            <p>We still can see the unpleasing artifacts in some of the downscaled LR results especially those produced by SISO downscaling method such as IRN and LSTM-VRN. However, MIMO-VRN can reduce much such artifacts since it utilizes temporal information while downscaling. The other way of reducing such artifacts is to increase the lambda factor in loss function which makes LR video much close to bicubic-downscaled one with a slight decrease in HR reconstrution quality. If the LR quality really bothers you, we suggest training the model with higher lambda factor.</p>
-        </div>
-        <div class="row" style="text-align: center;">    
-            <img src="web/pic/lambda.png" width="400">
+            <img src="web/pic/cstvsr.png" width="1200">
         </div>
     </div>
+    <!--
+    <div id="comparison_source">
+        <div class="row" style="text-align: center;">
+            <img src="web/pic/spatial_1.png" width="1200">
+        </div>
+    </div>
+    -->
+
+    <hr>
+    <h3>Ablation Studies</h3>
+    <hr>
+    <div id="comparison_source">
+        <div class="row" style="text-align: center;">
+            <img src="web/table3.png" height="240">
+            <img src="web/table4.png" height="240">
+        </div>
+    </div>
+    </div>
+
+
 
     </div>
 
