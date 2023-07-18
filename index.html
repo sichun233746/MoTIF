@@ -20,12 +20,10 @@
 
     <div id="header" class="container-fluid">
         <div class="row">
-            <h1>MoTIF: Learning Motion Trajectories <br> with Local Implicit Neural Functions for Continuous Space-Time Video Super-Resolution</h1>
+            <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions for Continuous Space-Time Video Super-Resolution</h1>
             <div class="authors">
                 <a href="https://www.linkedin.com/in/hyancheng96" target="_blank">Yan-Cheng Huang</a>, 
                 <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen</a>, 
-                <a href="https://johnnylu305.github.io", target="_blank">Cheng-You Lu</a>, 
-                <a href="https://a514514772.github.io", target="_blank">Hui-Po Wang</a>, 
                 <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng/cv", target="_blank">Wen-Hsiao Peng</a>, 
                 <a href="http://acm.cs.nctu.edu.tw/Home.aspx", target="_blank">Ching-Chun Huang</a>
             </div>
@@ -33,13 +31,12 @@
     
         <p style="text-align:center;">
             <a href="https://www.nycu.edu.tw/en/" target="_blank"><img src="web/NCTU_logo.png" height="100"></a>   
-            <a href="https://cispa.de/en" target="_blank"><img src="web/cispa.png" height="90"></a>  
             <a href="http://mapl.nctu.edu.tw/" target="_blank"><img src="web/mapl_logo.png"  height="110"></a>
         </p>
     </div>
     <div class="container" id="abstractdiv">
         <h2>Abstract</h2>
-            <p>This paper addresses the video rescaling task, which arises from the needs of adapting the video spatial resolution to suit individual viewing devices. We aim to jointly optimize video downscaling and upscaling as a combined task. Most recent studies focus on image-based solutions, which do not consider temporal information. We present two joint optimization approaches based on invertible neural networks with coupling layers. Our Long Short-Term Memory Video Rescaling Network (LSTM-VRN) leverages temporal information in the low-resolution video to form an explicit prediction of the missing high-frequency information for upscaling. Our Multi-input Multi-output Video Rescaling Network (MIMO-VRN) proposes a new strategy for downscaling and upscaling a group of video frames simultaneously. Not only do they outperform the image-based invertible model in terms of quantitative and qualitative results, but also show much improved upscaling quality than the video rescaling methods without joint optimization. To our best knowledge, this work is the first attempt at the joint optimization of video downscaling and upscaling.  </p>
+            <p>This work addresses continuous space-time video super-resolution (C-STVSR) that aims to up-scale an input video both spatially and temporally by any scaling factors. One key challenge of C-STVSR is to propagate information temporally among the input video frames. To this end, we introduce a space-time local implicit neural function. It has the striking feature of learning forward motion for a continuum of pixels. We motivate the use of forward motion from the perspective of learning individual motion trajectories, as opposed to learning a mixture of motion trajectories with backward motion. To ease motion interpolation, we encode sparsely sampled forward motion extracted from the input video as the contextual input. Alongwith a reliability-aware splatting and decoding scheme, our framework, termed MoTIF, achieves the state-of-the-art performance on C-STVSR.  </p>
     </div>
     <div class="container" id="intro_video">
         <h2>Introduction Video</h2>
