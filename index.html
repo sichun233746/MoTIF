@@ -22,10 +22,10 @@
         <div class="row">
             <h1>MoTIF: Learning Motion Trajectories with Local Implicit Neural <br> Functions for Continuous Space-Time Video Super-Resolution</h1>
             <div class="authors">
-                <a href="https://www.linkedin.com/in/hyancheng96" target="_blank">Yan-Cheng Huang</a>, 
-                <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen</a>, 
-                <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng/cv", target="_blank">Wen-Hsiao Peng</a>, 
-                <a href="http://acm.cs.nctu.edu.tw/Home.aspx", target="_blank">Ching-Chun Huang</a>
+                <a href="mailto:yhchen12101@gmail.com", target="_blank">Yi-Hsin Chen*</a>, 
+                <a href="www.linkedin.com/in/sicunchen", target="_blank">Si-Cun Chen*</a>, 
+                <a href="https://sites.google.com/site/yylinweb/", target="_blank">Yen-Yu Lin</a>,
+                <a href="https://sites.google.com/g2.nctu.edu.tw/wpeng/cv", target="_blank">Wen-Hsiao Peng</a> 
             </div>
         </div>
     
@@ -90,8 +90,9 @@
             <img src="web/arch.png" height="640">
         </p>
         <br>
-        <!--<p>
-            Overview of the proposed LSTM-VRN and MIMO-VRN for video rescaling. Both schemes involve an invertible network with coupling layers for video downscaling and upscaling. In part (a), LSTM-VRN downscales every video frame $x_t$ independently and forms a prediction $\hat{z}_t$ of the high-frequency component $z_t$ from the LR video frames $\{\hat{y}_i\}_{i=t-L}^{t+L}$ by a bi-directional LSTM that operates in a sliding window manner. In part (b), MIMO-VRN downscales a group of HR video frames $\{x_i\}_{i=t}^{t+g}$ into the LR video frames $\{\hat{y}_i\}_{i=t}^{t+g}$ simultaneously. The upscaling is also done on a group-by-group basis, with the high-frequency components $\{z_i\}_{i=t}^{t+g}$ estimated from the $\{\hat{y}_i\}_{i=t}^{t+g}$ by a predictive module.</p>-->
+        <p>
+            Our proposed MoTIF comprises four major components and operates as follows. First, given $I_{0}^L$ and $I_{1}^L$, (1) the encoder $E_I$ converts them into their latent representations $F_{0}^L,F_{1}^L,F_{(0,1)}^L \in \mathbb{R}^{C \times H \times W}$, where $F_{(0,1)}^L$ serves as a rough estimate of the feature of the target frame $I_t^H$. We adopt the off-the-shelf video-based encoder, which fuses information from both $I_{0}^L$ and $I_{1}^L$ in generating $F_{0}^L,F_{1}^L$ and $F_{(0,1)}^L$. Second, (2) the spatial local implicit neural function (S-INF) is queried to super-resolute $F_{0}^L,F_{1}^L$ as $F_{0}^H,F_{1}^H \in \mathbb{R}^{C \times H' \times W'}$, respectively. Third, considering $I_{0}^L$ as sitting at the origin in time, (3) the motion encoder $E_M$ encodes $M_{0 \rightarrow 1}^L \in \mathbb{R}^{2 \times H \times W}$--namely, the forward optical flow map capturing the forward motion from $I_{0}^L$ to $I_{1}^L$--together with its reliability map $Z_{0 \rightarrow 1}^L \in \mathbb{R}^{3 \times H \times W}$ into $T_0^{L} \in \mathbb{R}^{C \times H \times W}$. The optical flow estimation is not always perfect; $Z_{0 \rightarrow 1}^L$ indicates how reliable $M_{0 \rightarrow 1}^L$ is across spatial locations $(x,y)$ (Section~\ref{subsec:estimate_explicit_motion}). Forth, using $T_0^{L}$ as the motion latent, (4) our space-time local implicit neural function (ST-INF) renders a high-resolution, forward motion map $\hat{M}_{0 \rightarrow t}^H \in \mathbb{R}^{2 \times H' \times W'}$ and its reliability map $\hat{Z}_{0 \rightarrow t}^H \in \mathbb{R}^{H' \times W'}$ according to the query space-time coordinates $(x,y,t)$. $\hat{M}_{0 \rightarrow t}^H$ specifies the forward motion of the features in $F_{0}^H$ and is utilized to forward warp $F_{0}^H$ to $F_t^H$. The same motion encoding, rendering and warping processes are repeated for $I_{1}^L$, in aggregating temporally the information from all the reference frames. Lastly, we perform softmax splatting to create $F_t^H$ and $Z_t^H$, which are further combined with $F_{(0,1)}^H$ to decode the high-resolution video frame $\hat{I}_t^H$ at time $t$. $Z_t^H$ indicates how good $F_t^H$ is across spatial locations. It is used to condition the pixel-based decoding of the RGB values from $F_t^H$ and $F_{(0,1)}^H$. 
+        </p>
     </div>
 
     <div class="container" id="exp_results">
