@@ -1,6 +1,4 @@
-# MoTIF
-MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions for Continuous Space-Time Video Super-Resolution (ICCV 2023)
-(https://arxiv.org/abs/2307.07988)
+
 
 <h2 align="center">
   <b>MoTIF: Learning Motion Trajectories with Local Implicit Neural Functions <br> for Continuous Space-Time Video Super-Resolution</b>
