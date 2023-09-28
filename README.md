@@ -32,6 +32,10 @@ This work addresses continuous space-time video super-resolution (C-STVSR) that 
 ## Code
 Test code draft available.
 
+## Pre-trained weights
+[best.pth](https://sichun233746.github.io/MoTIF/)
+
+
 ## Citation
 If you find this work useful in your research, please consider citing:
 ```
