@@ -36,7 +36,7 @@ Test code draft available.
 1. Install all the dependencies.
 2. Download pretrained weights.
 3. Edit test.yml for different datasets.
-4. run
+4. Run
 ```shell
 python test.py
 ```
