@@ -32,6 +32,15 @@ This work addresses continuous space-time video super-resolution (C-STVSR) that 
 ## Code
 Test code draft available.
 
+## Testing
+1. Install all the dependencies.
+2. Download pretrained weights.
+3. Edit test.yml for different datasets.
+4. run
+```shell
+python test.py
+```
+
 ## Pre-trained weights
 [best.pth](https://sichun233746.github.io/MoTIF/)
 
