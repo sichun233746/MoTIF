@@ -42,7 +42,7 @@ python test.py
 ```
 
 ## Pre-trained weights
-[best.pth](https://sichun233746.github.io/MoTIF/)
+[best.pth](https://drive.google.com/file/d/1YpE7Zgjgs6Lv6RdJ0K2Ag-TcM2x04Otm/view?usp=drivesdk)
 
 
 ## Citation
